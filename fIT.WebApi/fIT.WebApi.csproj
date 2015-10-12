@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{919D5A1C-C503-4315-8A1C-86D4A09440FD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>fIT.WebApi</RootNamespace>
+    <AssemblyName>fIT.WebApi</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>fIT.WebApi.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Jwt, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Jwt.3.0.1\lib\net45\Microsoft.Owin.Security.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.2.1\lib\net40\Swashbuckle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=5.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.5.5.1\lib\net45\System.Web.Http.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Thinktecture.IdentityModel.Core, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Thinktecture.IdentityModel.Core.1.4.0\lib\net45\Thinktecture.IdentityModel.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fIT.WebApi.XML" />
+    <Content Include="Index.html" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\fIT-Bachelor - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\fIT-Bachelor - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\fIT-Bachelor.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\EnumsController.cs" />
+    <Compile Include="Controller\PracticeController.cs" />
+    <Compile Include="Controller\SchedulesController.cs" />
+    <Compile Include="Migrations\201507150819282_AlteredModels_WeightTimeStamp.cs" />
+    <Compile Include="Migrations\201507150819282_AlteredModels_WeightTimeStamp.Designer.cs">
+      <DependentUpon>201507150819282_AlteredModels_WeightTimeStamp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508021258512_PracticeSinglePrimaryKey.cs" />
+    <Compile Include="Migrations\201508021258512_PracticeSinglePrimaryKey.Designer.cs">
+      <DependentUpon>201508021258512_PracticeSinglePrimaryKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508021342573_ImplementedKeysInEveryEntityAgain.cs" />
+    <Compile Include="Migrations\201508021342573_ImplementedKeysInEveryEntityAgain.Designer.cs">
+      <DependentUpon>201508021342573_ImplementedKeysInEveryEntityAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508021344065_ImplementedKeysInEveryEntityAgain2.cs" />
+    <Compile Include="Migrations\201508021344065_ImplementedKeysInEveryEntityAgain2.Designer.cs">
+      <DependentUpon>201508021344065_ImplementedKeysInEveryEntityAgain2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508021353259_ChangePracticeKeyDefinition.cs" />
+    <Compile Include="Migrations\201508021353259_ChangePracticeKeyDefinition.Designer.cs">
+      <DependentUpon>201508021353259_ChangePracticeKeyDefinition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508021405389_ChangePracticeKeyDefinition1.cs" />
+    <Compile Include="Migrations\201508021405389_ChangePracticeKeyDefinition1.Designer.cs">
+      <DependentUpon>201508021405389_ChangePracticeKeyDefinition1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508021857521_ChangePracticeKeyDefinition2.cs" />
+    <Compile Include="Migrations\201508021857521_ChangePracticeKeyDefinition2.Designer.cs">
+      <DependentUpon>201508021857521_ChangePracticeKeyDefinition2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508031040410_AddedModelBinder1.cs" />
+    <Compile Include="Migrations\201508031040410_AddedModelBinder1.Designer.cs">
+      <DependentUpon>201508031040410_AddedModelBinder1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EnumValueModel.cs" />
+    <Compile Include="Models\PracticeModel.cs" />
+    <Compile Include="Models\RefreshTokenModel.cs" />
+    <Compile Include="Models\ScheduleModel.cs" />
+    <Compile Include="Repository\Interfaces\CRUD\IEntity.cs" />
+    <Compile Include="Repository\Interfaces\CRUD\MultiId\IRepositoryAddAndDeleteMultiId.cs" />
+    <Compile Include="Repository\Interfaces\CRUD\SingleID\IRepositoryAddAndDelete.cs" />
+    <Compile Include="Repository\Interfaces\CRUD\IRepositoryFindAll.cs" />
+    <Compile Include="Repository\Interfaces\CRUD\MultiId\IRepositoryFindSingleMultiId.cs" />
+    <Compile Include="Repository\Interfaces\CRUD\IRepositoryUpdate.cs" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\AccountsController.cs" />
+    <Compile Include="Controller\BaseApiController.cs" />
+    <Compile Include="Controller\ExerciseController.cs" />
+    <Compile Include="Controller\RefreshTokenController.cs" />
+    <Compile Include="Controller\RolesController.cs" />
+    <Compile Include="Entities\Client.cs" />
+    <Compile Include="Entities\Enums\ApplicationTypes.cs" />
+    <Compile Include="Entities\Enums\FitnessTypes.cs" />
+    <Compile Include="Entities\Enums\GenderType.cs" />
+    <Compile Include="Entities\Enums\JobTypes.cs" />
+    <Compile Include="Entities\ApplicationUser.cs" />
+    <Compile Include="Entities\Exercise.cs" />
+    <Compile Include="Entities\Practice.cs" />
+    <Compile Include="Entities\RefreshToken.cs" />
+    <Compile Include="Entities\Schedule.cs" />
+    <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="Manager\ApplicationRoleManager.cs" />
+    <Compile Include="Manager\ApplicationUserManager.cs" />
+    <Compile Include="Migrations\201507071931165_InitialCreate.cs" />
+    <Compile Include="Migrations\201507071931165_InitialCreate.Designer.cs">
+      <DependentUpon>201507071931165_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507081835550_addedLevel.cs" />
+    <Compile Include="Migrations\201507081835550_addedLevel.Designer.cs">
+      <DependentUpon>201507081835550_addedLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507101105123_addedRoles.cs" />
+    <Compile Include="Migrations\201507101105123_addedRoles.Designer.cs">
+      <DependentUpon>201507101105123_addedRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507101153443_addedClientRefreshtokenSchedules.cs" />
+    <Compile Include="Migrations\201507101153443_addedClientRefreshtokenSchedules.Designer.cs">
+      <DependentUpon>201507101153443_addedClientRefreshtokenSchedules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ChangePasswordModel.cs" />
+    <Compile Include="Models\CreateRoleModel.cs" />
+    <Compile Include="Models\ExerciseModel.cs" />
+    <Compile Include="Models\EntryModel.cs" />
+    <Compile Include="Models\ModelFactory.cs" />
+    <Compile Include="Models\CreateUserModel.cs" />
+    <Compile Include="Models\RoleModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\UsersInRoleModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\CustomJwtFormat.cs" />
+    <Compile Include="Provider\CustomOAuthProvider.cs" />
+    <Compile Include="Provider\CustomRefreshTokenProvider.cs" />
+    <Compile Include="Repository\ApplicationDbContext.cs" />
+    <Compile Include="Repository\Interfaces\CRUD\SingleID\IRepositoryFindSingle.cs" />
+    <Compile Include="Repository\Interfaces\IClientRepository.cs" />
+    <Compile Include="Repository\Interfaces\IExerciseRepository.cs" />
+    <Compile Include="Repository\Interfaces\IPracticeRepository.cs" />
+    <Compile Include="Repository\Interfaces\IRefreshTokenRepository.cs" />
+    <Compile Include="Repository\Interfaces\IRepository.cs" />
+    <Compile Include="Repository\ApplicationRepository.cs" />
+    <Compile Include="Repository\Interfaces\IScheduleRepository.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201507071931165_InitialCreate.resx">
+      <DependentUpon>201507071931165_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507081835550_addedLevel.resx">
+      <DependentUpon>201507081835550_addedLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507101105123_addedRoles.resx">
+      <DependentUpon>201507101105123_addedRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507101153443_addedClientRefreshtokenSchedules.resx">
+      <DependentUpon>201507101153443_addedClientRefreshtokenSchedules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507150819282_AlteredModels_WeightTimeStamp.resx">
+      <DependentUpon>201507150819282_AlteredModels_WeightTimeStamp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508021258512_PracticeSinglePrimaryKey.resx">
+      <DependentUpon>201508021258512_PracticeSinglePrimaryKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508021342573_ImplementedKeysInEveryEntityAgain.resx">
+      <DependentUpon>201508021342573_ImplementedKeysInEveryEntityAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508021344065_ImplementedKeysInEveryEntityAgain2.resx">
+      <DependentUpon>201508021344065_ImplementedKeysInEveryEntityAgain2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508021353259_ChangePracticeKeyDefinition.resx">
+      <DependentUpon>201508021353259_ChangePracticeKeyDefinition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508021405389_ChangePracticeKeyDefinition1.resx">
+      <DependentUpon>201508021405389_ChangePracticeKeyDefinition1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508021857521_ChangePracticeKeyDefinition2.resx">
+      <DependentUpon>201508021857521_ChangePracticeKeyDefinition2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508031040410_AddedModelBinder1.resx">
+      <DependentUpon>201508031040410_AddedModelBinder1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.de-DE.resx" />
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49695</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62816/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
