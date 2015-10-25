@@ -8,19 +8,21 @@ using fITNat.Services;
 
 namespace fITNat
 {
-    [Activity(Label = "fITNat", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "fITNat", MainLauncher = true, Icon = "@drawable/ic_actionBar_logo", Theme= "@style/CustomActionBarTheme")]
     public class MainActivity : Activity
     {
         private Button mBtnSignUp;
         private Button mBtnSignIn;
-        private ProgressBar progressBar;
-        private ImageView connectivityPointer;
         private Guid userId;
         private int connectivity;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+            //Neue ActionBar einblenden
+            ActionBar.SetCustomView(Resource.Layout.ActionBar);
+            ActionBar.SetDisplayShowCustomEnabled(true);
+
             //Services starten
             ThreadPool.QueueUserWorkItem(o => StartService(new Intent(this, typeof(OnOffService))));
             ThreadPool.QueueUserWorkItem(o => StartService(new Intent(this, typeof(ManagementServiceLocal))));
@@ -29,10 +31,6 @@ namespace fITNat
             SetContentView(Resource.Layout.Main);
             mBtnSignUp = FindViewById<Button>(Resource.Id.btnSignUp);
             mBtnSignIn = FindViewById<Button>(Resource.Id.btnSignIn);
-            //progressBar = FindViewById<ProgressBar>(Resource.Id.progressBar1);
-            connectivityPointer = FindViewById<ImageView>(Resource.Id.ivConnection);
-            //ConnectivityPointer belegen
-            setConnectivityStatus(OnOffService.Online);
 
             mBtnSignUp.Click += (object sender, EventArgs args) =>
                 {
@@ -56,9 +54,6 @@ namespace fITNat
 
         private void SignUpDialog_onSignUpComplete(object sender, OnSignUpEventArgs e)
         {
-            //ConnectivityPointer belegen
-            setConnectivityStatus(OnOffService.Online);
-
             var intent = new Intent(this, typeof(ScheduleActivity));
             StartActivity(intent);
 
@@ -67,28 +62,11 @@ namespace fITNat
 
         private void SignInDialog_onSignInComplete(object sender, OnSignInEventArgs e)
         {
-            //ConnectivityPointer belegen
-            setConnectivityStatus(OnOffService.Online);
-
             var intent = new Intent(this, typeof(ScheduleActivity));
             //Userinformationen mit übergeben
             userId = e.UserId;
             intent.PutExtra("User", userId.ToString());
             StartActivity(intent);
-        }
-
-        /// <summary>
-        /// Belegt das Connectivity-Icon entsprechend des Verbindungsstatus
-        /// </summary>
-        /// <param name="online"></param>
-        public void setConnectivityStatus(bool online)
-        {
-            connectivityPointer.SetImageResource(0);
-            if (online)
-                connectivity = Resource.Drawable.CheckDouble;
-            else
-                connectivity = Resource.Drawable.Check;
-            connectivityPointer.SetImageResource(connectivity);
         }
     }
 }

@@ -598,6 +598,9 @@ namespace fITNat
                         {
                             //Online = true;
                             setzeStatus(true);
+                            //Anzeige auf offline stellen
+                            //Activity.RunOnUiThread(() => );
+
                             //vorher Offline => jetzt die Aktionen ausführen, die nur lokal gemacht werden konnten
                             if (WasOffline)
                             {
@@ -609,6 +612,8 @@ namespace fITNat
                         {
                             //Online = false;
                             setzeStatus(false);
+                            //Anzeige auf offline stellen
+
                             setzeWasOffline(true);
                         }
                         Console.WriteLine("Online: " + Online);                            
