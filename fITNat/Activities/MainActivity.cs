@@ -8,7 +8,7 @@ using fITNat.Services;
 
 namespace fITNat
 {
-    [Activity(Label = "fITNat", MainLauncher = true, Icon = "@drawable/ic_actionBar_logo", Theme= "@style/CustomActionBarTheme")]
+    [Activity(Label = "fITNat",Icon = "@drawable/ic_actionBar_logo")]
     public class MainActivity : Activity
     {
         private Button mBtnSignUp;
@@ -20,8 +20,16 @@ namespace fITNat
         {
             base.OnCreate(bundle);
             //Neue ActionBar einblenden
-            ActionBar.SetCustomView(Resource.Layout.ActionBar);
+            //ActionBar.SetCustomView(Resource.Layout.ActionBar);
             ActionBar.SetDisplayShowCustomEnabled(true);
+            try
+            {
+                //ActionBar.CustomView.FindViewById<ImageView>(Resource.Id.imageView3).SetBackgroundColor(Android.Graphics.Color.Aqua);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
 
             //Services starten
             ThreadPool.QueueUserWorkItem(o => StartService(new Intent(this, typeof(OnOffService))));
@@ -69,5 +77,20 @@ namespace fITNat
             StartActivity(intent);
         }
     }
+    /*
+    //Receiver für die Änderung des Verbindungsstatus
+    [BroadcastReceiver]
+    public class OnlineStatusBroadcastReceiver : BroadcastReceiver
+    {
+        public static readonly string APP_STATUS = "online";
+        public override void OnReceive(Context context, Intent intent)
+        {
+            if (intent.Action == "online")
+            {
+                ActionBar
+                Toast.MakeText(context, "Grid Started", ToastLength.Short).Show();
+            }
+        }
+    }*/
 }
 

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:myapp="http://schemas.android.com/apk/res-auto">
+
+  <item android:id="@+id/internetConnectivity"
+		android:icon="@drawable/ic_actionBar_check"
+		android:title="Connection"
+		myapp:showAsAction="always" />
+  
+  <item android:id="@+id/action_add"
+		android:icon="@drawable/ic_actionBar_add"
+		android:title="Refresh"
+		myapp:showAsAction="always" /><!-- werden immer angezeigt-->
+
+  <item android:id="@+id/action_menu"
+		android:icon="@drawable/ic_actionBar_menu"
+		android:title="Help"
+		myapp:showAsAction="always"/>
+
+</menu>
