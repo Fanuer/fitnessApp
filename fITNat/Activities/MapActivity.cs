@@ -23,6 +23,7 @@ namespace fITNat.Activities
             base.OnCreate(bundle);
 
             // Create your application here
+            SetContentView(Resource.Layout.MapView);
             SetUpMap();
         }
 
@@ -30,7 +31,9 @@ namespace fITNat.Activities
         {
             if (mMap == null)
             {
-                FragmentManager.FindFragmentById<MapFragment>(Resource.Id.map).GetMapAsync(this);
+                var map = Resource.Id.map;
+                var fragment = FragmentManager.FindFragmentById<MapFragment>(map);
+                fragment.GetMapAsync(this);
             }
         }
 

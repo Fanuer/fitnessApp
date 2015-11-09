@@ -16,7 +16,7 @@ using Android.Gms.Maps;
 
 namespace fITNat.Activities
 {
-    [Activity(Label = "HomeActivity", Icon = "@drawable/ic_actionBar_logo", MainLauncher = true, Theme = "@style/MyTheme")]
+    [Activity(Label = "fIT", Icon = "@drawable/ic_actionBar_logo", MainLauncher = true, Theme = "@style/MyTheme")]
     public class HomeActivity : ActionBarActivity
     {
         private SupportToolbar mToolbar;
@@ -57,6 +57,7 @@ namespace fITNat.Activities
             //mRightDataSet.Add("Right Item 2");
             mRightAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, mRightDataSet);
             mRightDrawer.Adapter = mRightAdapter;
+            mRightDrawer.ItemClick += lv_ItemClick;
 
             /*mDrawerToggle = new MyActionBarDrawerToggle(
                 this,                           //Host Activity
@@ -92,6 +93,22 @@ namespace fITNat.Activities
             }*/
 
         }
+
+        /// <summary>
+        /// Clickevent auf ein Element des ListViews im rechten Menü
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lv_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            string value = mRightDrawer.GetItemAtPosition(e.Position).ToString();
+            if(value == "Studio-Finder")
+            {
+                var mapActivity = new Intent(this, typeof(MapActivity));
+                StartActivity(mapActivity);
+            }
+        }
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
