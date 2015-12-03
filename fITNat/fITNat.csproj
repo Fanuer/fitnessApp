@@ -111,6 +111,7 @@
     <Compile Include="Adapters\ExerciseListViewAdapter.cs" />
     <Compile Include="Activities\ScheduleActivity.cs" />
     <Compile Include="DBModels.cs" />
+    <Compile Include="Fragments\MainFragment.cs" />
     <Compile Include="LocalData\LocalDataChangeType.cs" />
     <Compile Include="LocalData\LocalDB.cs" />
     <Compile Include="LocalData\LocalDBAsync.cs" />
