@@ -4,6 +4,7 @@ using Android.Content;
 using Android.Widget;
 using Android.OS;
 using System.Threading;
+using fITNat.Activities;
 using fITNat.Services;
 
 namespace fITNat
@@ -13,6 +14,7 @@ namespace fITNat
     {
         private Button mBtnSignUp;
         private Button mBtnSignIn;
+        private Button mBtnMap;
         private ProgressBar progressBar;
         private ImageView connectivityPointer;
         private Guid userId;
@@ -29,6 +31,7 @@ namespace fITNat
             SetContentView(Resource.Layout.Main);
             mBtnSignUp = FindViewById<Button>(Resource.Id.btnSignUp);
             mBtnSignIn = FindViewById<Button>(Resource.Id.btnSignIn);
+            mBtnMap = FindViewById<Button>(Resource.Id.btnMap);
             //progressBar = FindViewById<ProgressBar>(Resource.Id.progressBar1);
             connectivityPointer = FindViewById<ImageView>(Resource.Id.ivConnection);
             //ConnectivityPointer belegen
@@ -51,6 +54,11 @@ namespace fITNat
                 signInDialog.Show(transaction, "dialog fragment");
 
                 signInDialog.onSignInComplete += SignInDialog_onSignInComplete;
+            };
+            mBtnMap.Click += (object sender, EventArgs args) =>
+            {
+                var intent = new Intent(this, typeof(MapActivity));
+                StartActivity(intent);
             };
         }
 

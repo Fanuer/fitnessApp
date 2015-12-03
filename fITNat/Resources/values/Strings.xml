@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
-    <string name="ApplicationName">fITNat</string>
+  <string name="hello">Hello World, Click Me!</string>
+  <string name="app_name">fITNat</string>
+  <string name="home">Startseite</string>
+  <string name="google_maps_key">AIzaSyCx7sHU1VfGE9mZhJ53ZiLl7sT-IPE1uEY</string>
 </resources>
