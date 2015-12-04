@@ -128,9 +128,9 @@ namespace fITNat
         {
             connectivityPointer.SetImageResource(0);
             if (online)
-                connectivity = Resource.Drawable.ic_actionBar_checkDouble;
+                connectivity = Resource.Drawable.CheckDouble;
             else
-                connectivity = Resource.Drawable.ic_actionBar_check;
+                connectivity = Resource.Drawable.Check;
             connectivityPointer.SetImageResource(connectivity);
         }
     }

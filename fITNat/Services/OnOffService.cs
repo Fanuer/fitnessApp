@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+
 using fITNat.DBModels;
 using Android.App;
 using Android.Content;
@@ -15,7 +16,6 @@ using fIT.WebApi.Client.Data.Models.Shared;
 using System.Threading;
 using fIT.WebApi.Client.Data.Models.Practice;
 using fITNat.LocalData;
-using Android.Widget;
 
 namespace fITNat
 {
@@ -588,7 +588,7 @@ namespace fITNat
                     {
                         status = await mgnServiceServer.PingAsync();
                     }
-                    catch (Exception ex)
+                    catch(Exception ex)
                     {
                         status = false;
                     }
@@ -598,14 +598,6 @@ namespace fITNat
                         {
                             //Online = true;
                             setzeStatus(true);
-                            //Anzeige auf offline stellen
-                            /*MainActivity main;
-                            Activity.RunOnUiThread(() =>
-                            {
-                                ActionBar bar;
-                                bar.CustomView.FindViewById<ImageView>(Resource.Id.imageView3).SetBackgroundColor(Android.Graphics.Color.Aqua);
-                            });*/
-
                             //vorher Offline => jetzt die Aktionen ausführen, die nur lokal gemacht werden konnten
                             if (WasOffline)
                             {
@@ -617,8 +609,6 @@ namespace fITNat
                         {
                             //Online = false;
                             setzeStatus(false);
-                            //Anzeige auf offline stellen
-
                             setzeWasOffline(true);
                         }
                         Console.WriteLine("Online: " + Online);                            

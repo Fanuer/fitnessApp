@@ -9,7 +9,7 @@
     android:id="@+id/rlPracticeLayout">
     <ImageView
         android:id="@+id/ivConnectionPractice"
-        android:src="@drawable/ic_actionBar_check"
+        android:src="@drawable/check"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_gravity="right"

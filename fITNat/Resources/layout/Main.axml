@@ -7,6 +7,12 @@
     android:weightSum="100"
     android:minWidth="25px"
     android:minHeight="25px">
+    <ImageView
+        android:src="@drawable/check"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/ivConnection"
+        android:layout_gravity="right" />
     <TextView
         android:text="Account erstellen"
         android:textAppearance="?android:attr/textAppearanceMedium"
