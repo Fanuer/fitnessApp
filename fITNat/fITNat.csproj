@@ -53,6 +53,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Components\json.net-7.0.1\lib\android\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="SQLite">
       <HintPath>Assemblies\sqlite-net-1.0.8.3\lib\android\SQLite.dll</HintPath>
     </Reference>
@@ -71,6 +74,7 @@
     <Reference Include="System" />
     <Reference Include="System.Collections" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Json" />
     <Reference Include="System.Net" />
     <Reference Include="System.Runtime" />
     <Reference Include="System.Threading" />
@@ -111,6 +115,13 @@
     <Compile Include="LocalData\Models\LocalEntityBase.cs" />
     <Compile Include="LocalData\Models\Schedule.cs" />
     <Compile Include="LocalData\Models\User.cs" />
+    <Compile Include="mapcomponent\controllers\GMapHandler.cs" />
+    <Compile Include="mapcomponent\controllers\GPlacesHandler.cs" />
+    <Compile Include="mapcomponent\controllers\HTTPRequest.cs" />
+    <Compile Include="mapcomponent\controllers\LatLngDist.cs" />
+    <Compile Include="mapcomponent\controllers\LocationHandler.cs" />
+    <Compile Include="mapcomponent\FitMapFragment.cs" />
+    <Compile Include="mapcomponent\GMapFragment.cs" />
     <Compile Include="Services\ConnectivityService.cs" />
     <Compile Include="Dialogs\Dialog_SignIn.cs" />
     <Compile Include="Dialogs\Dialog_SignUp.cs" />
@@ -202,6 +213,16 @@
       <Visible>False</Visible>
       <Version>27.0.0.0</Version>
     </XamarinComponentReference>
+    <XamarinComponentReference Include="json.net">
+      <Visible>False</Visible>
+      <Version>7.0.1</Version>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_fitmap.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_map.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

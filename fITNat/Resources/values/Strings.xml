@@ -3,5 +3,6 @@
   <string name="hello">Hello World, Click Me!</string>
   <string name="app_name">fITNat</string>
   <string name="home">Startseite</string>
-  <string name="google_maps_key">AIzaSyCx7sHU1VfGE9mZhJ53ZiLl7sT-IPE1uEY</string>
+  <string name="google_maps_key">AIzaSyBfVaiXt2v5Hz52SJwP8eV4nQoswlQXasE</string>
+  <string name="ENABLE_GPS">Please enable GPS</string>
 </resources>

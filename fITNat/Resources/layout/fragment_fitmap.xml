@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" >
+  <fragment 
+    android:id="@+id/gmap8485315486415"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    class="fitnat.fragments.GMapFragment"/>
+  
+  <TextView android:layout_width="match_parent" android:layout_height="match_parent" android:text ="TEST" android:layout_alignParentBottom="true" />
+  
+</RelativeLayout>
