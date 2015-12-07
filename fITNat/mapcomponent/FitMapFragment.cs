@@ -36,6 +36,10 @@ namespace fitnat.fragments
             base.OnResume();
 
             GMap = ChildFragmentManager.FindFragmentById<GMapFragment>(Resource.Id.gmap8485315486415);
+            if (GMap == null)
+            {
+                GMap = FragmentManager.FindFragmentById<GMapFragment>(Resource.Id.gmap8485315486415);
+            }
             GPlaces = new GPlacesHandler();
 
             // registers to map events for adding the places
@@ -44,7 +48,7 @@ namespace fitnat.fragments
                 var map = ((GMapHandler)sender).Map;
 
                 map.CameraChange += async (s, a) => {
-                    var jsonval = await GPlaces.GetPlacesAsJSON(map.CameraPosition.Target.Latitude, map.CameraPosition.Target.Longitude, map.Projection.VisibleRegion.LatLngBounds);
+                    var jsonval = await GPlaces.GetPlacesAsJSON(map.CameraPosition.Target.Latitude, map.CameraPosition.Target.Longitude, 1000);
                     var gyms = Gym.InstatiateManyFromGeoJson(jsonval);
 
                     if (gyms != null)

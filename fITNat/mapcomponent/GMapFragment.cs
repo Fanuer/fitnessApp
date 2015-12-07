@@ -77,6 +77,10 @@ namespace fitnat.fragments
         private void SetUpMapIfNeeded()
         {
             mapFragment = ChildFragmentManager.FindFragmentById<MapFragment>(Resource.Id.map9879468784687);
+            if (mapFragment == null)
+            {
+                mapFragment = FragmentManager.FindFragmentById<MapFragment>(Resource.Id.map9879468784687);
+            }
             if (Map == null)
             {
                 // registers an event to the handler (implements the callback concept)
